@@ -381,7 +381,7 @@ function addQA(doc,y,id,text,answer){ addPdfLine(doc,`${id} ${text}`,y,{bold:tru
 function generatePdf(){
   saveState(); if(!window.jspdf?.jsPDF){setStatus('Não foi possível carregar o gerador de PDF. Use “Imprimir / salvar como PDF”.');return;}
   const {jsPDF}=window.jspdf; const doc=new jsPDF({unit:'mm',format:'a4'}); const y={y:18};
-  addPdfLine(doc,'Questionário de atendimento — Clínica da Núbia',y,{bold:true,size:15}); addPdfLine(doc,'Versão reduzida e condicional para configuração do atendimento automatizado',y,{size:9.5}); y.y+=2;
+  addPdfLine(doc,'Questionário de atendimento — NB Bronze',y,{bold:true,size:15}); addPdfLine(doc,'Versão reduzida e condicional para configuração do atendimento automatizado',y,{size:9.5}); y.y+=2;
   addPdfLine(doc,`Responsável pelas respostas: ${state.meta?.nome||'Sem resposta'}`,y); addPdfLine(doc,`Função: ${state.meta?.funcao||'Sem resposta'}`,y); addPdfLine(doc,`Data: ${state.meta?.data||'Sem resposta'}`,y); addPdfLine(doc,`Aprovador: ${state.meta?.aprovador||'Sem resposta'}`,y); y.y+=3;
   sections.forEach(sec=>{ addPdfLine(doc,sec.title,y,{bold:true,size:12.5}); sec.subsections.forEach(sub=>{ addPdfLine(doc,sub.title,y,{bold:true,size:10.5});
     if(sub.repeater==='services'){ (state.repeaters?.services||[]).forEach((store,i)=>{ addPdfLine(doc,`Serviço / versão ${i+1}`,y,{bold:true}); serviceQuestions.forEach(item=>addQA(doc,y,item.id,item.text,displayAnswer(item,store))); }); }

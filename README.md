@@ -1,6 +1,6 @@
-# Questionário interativo — Clínica da Núbia
+# Questionário interativo — NB Bronze
 
-Versão reduzida e condicional do levantamento de atendimento da Clínica da Núbia, preparada para publicação estática no GitHub Pages.
+Versão reduzida e condicional do levantamento de atendimento do NB Bronze, preparada para publicação estática no GitHub Pages.
 
 ## O que mudou nesta versão
 
